@@ -25,14 +25,14 @@ public class EndView extends BaseView {
     private float button_y2;
     private float strwid;
     private float strhei;
-    private boolean isBtChange;                // ��ťͼƬ�ı�ı��
+    private boolean isBtChange;                // ???????????
     private boolean isBtChange2;
-    private String startGame = "重新开始";    // ��ť������
+    private String startGame = "重新开始";    // ?????????
     private String exitGame = "退出游戏";
-    private Bitmap button;                    // ��ťͼƬ
-    private Bitmap button2;                    // ��ťͼƬ
-    private Bitmap background;                // ����ͼƬ
-    private Rect rect;                        // �������ֵ�����
+    private Bitmap button;                    // ?????
+    private Bitmap button2;                    // ?????
+    private Bitmap background;                // ??????
+    private Rect rect;                        // ?????????????
     private MainActivity mainActivity;
 
     public EndView(Context context, GameSoundPool sounds) {

@@ -67,7 +67,7 @@ public class BigPlaneBullet extends EnemyBullet {
 			isAlive = false;
 		}
 	}
-
+	// 碰撞判断
 	@Override
 	public boolean isCollide(GameObject obj) {
 		return super.isCollide(obj);
