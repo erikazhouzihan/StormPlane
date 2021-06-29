@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
@@ -456,6 +457,7 @@ public class MainView extends BaseView {
             canvas.drawBitmap(background, 0, bg_y, paint); // 绘制背景图
             canvas.drawBitmap(background2, 0, bg_y2, paint); // 绘制背景图
             canvas.restore();
+
             // 绘制按钮
             canvas.save();
             canvas.clipRect(10, 10, 10 + play_bt_w, 10 + play_bt_h);
@@ -635,14 +637,14 @@ public class MainView extends BaseView {
 
     // 背景移动的逻辑函数
     public void viewLogic() {
-
             if (bg_y > bg_y2) {
-                bg_y += 10;
+                bg_y += 3;
                 bg_y2 = bg_y - background.getHeight();
             } else {
-                bg_y2 += 10;
+                bg_y2 += 3;
                 bg_y = bg_y2 - background.getHeight();
             }
+
             if (bg_y >= background.getHeight()) {
                 bg_y = bg_y2 - background.getHeight();
             } else if (bg_y2 >= background.getHeight()) {
@@ -676,17 +678,14 @@ public class MainView extends BaseView {
             long startTime = System.currentTimeMillis();
             initObject();
             drawSelf();
-            // 背景移动的逻辑 发送handler
-            Message msg = new Message();
-            msg.what = MOVE_BG_FLAG;
-            mHandler.sendMessageDelayed(msg, 1500);
-
+            // 背景移动的逻辑
+//            Message msg = new Message();
+//            msg.what = MOVE_BG_FLAG;
+//            mHandler.sendMessageDelayed(msg, 10);
             viewLogic();
             long endTime = System.currentTimeMillis();
-
             if (!isPlay) {
                 mMediaPlayer.pause();// 音乐暂停
-
                 synchronized (thread) {
                     try {
                         thread.wait();
@@ -701,8 +700,8 @@ public class MainView extends BaseView {
             }
 
             try {
-                if (endTime - startTime < 100)
-                    Thread.sleep(100 - (endTime - startTime));
+                if (endTime - startTime < 33)
+                    Thread.sleep(33);
             } catch (InterruptedException err) {
                 err.printStackTrace();
             }
@@ -722,17 +721,17 @@ public class MainView extends BaseView {
     // 接收handler消息标识符
     private final int MOVE_BG_FLAG = 0x0001;
 
-    @SuppressLint("HandlerLeak")
-    private Handler mHandler = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.what){
-                case MOVE_BG_FLAG:
-                    viewLogic();
-                    break;
-                    default:break;
-            }
-        }
-    };
+//    @SuppressLint("HandlerLeak")
+//    private Handler mHandler = new Handler(){
+//        @Override
+//        public void handleMessage(Message msg) {
+//            super.handleMessage(msg);
+//            switch (msg.what){
+//                case MOVE_BG_FLAG:
+//                    viewLogic();
+//                    break;
+//                    default:break;
+//            }
+//        }
+//    };
 }
