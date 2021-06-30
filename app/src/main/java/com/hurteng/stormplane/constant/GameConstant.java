@@ -40,7 +40,7 @@ public interface GameConstant {
 	int BOSSPLANE_SCORE = 2000;// Boss
 
 	//物品出现所需的积分值
-	int MIDDLEPLANE_APPEARSCORE = 20;// 中型机
+	int MIDDLEPLANE_APPEARSCORE = 2000;// 中型机
 	int BIGPLANE_APPEARSCORE = 8000;// 大型机
 	int BOSSPLANE_APPEARSCORE = 30000;// Boss
 	int MISSILE_APPEARSCORE = 5000;// 导弹
