@@ -80,7 +80,7 @@ public class MiddlePlane extends EnemyPlane {
             middlePlane.recycle();
         }
     }
-
+    //移动逻辑
     @Override
     public void logic() {
         if (object_y < screen_height) {

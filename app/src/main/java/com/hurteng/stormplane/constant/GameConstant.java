@@ -21,7 +21,7 @@ public interface GameConstant {
 	//敌机总数量
 	int SMALLPLANE_COUNT = 10;// 小型机
 	int MIDDLEPLANE_COUNT = 8;// 中型机
-	int BIGPLANE_COUNT = 10;// 大型机
+	int BIGPLANE_COUNT = 1;// 大型机
 	int BOSSPLANE_COUNT = 1;// Boss
 
 	//敌机血量
@@ -40,7 +40,7 @@ public interface GameConstant {
 	int BOSSPLANE_SCORE = 2000;// Boss
 
 	//物品出现所需的积分值
-	int MIDDLEPLANE_APPEARSCORE = 2000;// 中型机
+	int MIDDLEPLANE_APPEARSCORE = 20;// 中型机
 	int BIGPLANE_APPEARSCORE = 8000;// 大型机
 	int BOSSPLANE_APPEARSCORE = 30000;// Boss
 	int MISSILE_APPEARSCORE = 5000;// 导弹

@@ -48,8 +48,8 @@ public class BigPlane extends EnemyPlane {
 	public void initial(int arg0, float arg1, float arg2) {
 		super.initial(arg0, arg1, arg2);
 		
-		speed = GameConstant.BIGPLANE_SPEED;
-		bloodVolume = GameConstant.BIGPLANE_BLOOD;
+		speed = GameConstant.BIGPLANE_SPEED;//设置速度
+		bloodVolume = GameConstant.BIGPLANE_BLOOD;//设置总血量
 		blood = bloodVolume;
 		isFire = false;
 		isAlive = true;
@@ -171,20 +171,20 @@ public class BigPlane extends EnemyPlane {
 
 	@Override
 	public void logic() {
-
+		Random ran = new Random();
+		int speed_other = 6 * ran.nextInt(3) + 19;
 		if (!isFire) {
 			isFire = true;
 		}
-
+		//尝试先去掉BigPlane的左右移动逻辑
 		if (object_y < screen_height) {
-
 			if (speedTime < 4) {
 				object_y += speed;
-				object_x += Math.tan(object_y);
+//				object_x += 15 * speedTime * Math.sin(object_y);
 			} else {
 				speed = 11;
 				object_y += speed;
-				object_x -= Math.tan(object_y);
+//				object_x += 15 * speedTime * Math.sin(object_y);
 			}
 
 		} else {
