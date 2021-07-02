@@ -88,23 +88,13 @@ public class SmallPlane extends EnemyPlane {
      * 移动逻辑
      */
     public void logic() {
-		/*
-         * if (object_y < screen_height) { object_x -= speed / 10; object_y +=
-		 * speed; if (object_x < 0) { speed = -2 * speed; } } else { isAlive =
-		 * false; }
-		 */
+
         Random random = new Random();
 
         if (object_y < screen_height) {
 
-            object_y += speed;
+            object_y += speed;//纵坐标的计算是以屏幕顶部为0来计算的.纵坐标达到了屏幕高度的数值，则表示到达了底部.
             object_x += 20 * speedTime * Math.sin(object_y);
-
-            // speed -= 1;
-			/*
-			 * if (object_y < -object_height) {
-			 * //必须小于-object_height，如果条件是object_y<0,敌机无法出现 isAlive = false; }
-			 */
 
         } else {
             isAlive = false;
