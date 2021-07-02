@@ -1,5 +1,4 @@
 package com.hurteng.stormplane.view;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -18,7 +17,7 @@ import com.hurteng.stormplane.sounds.GameSoundPool;
  */
 @SuppressLint("ViewConstructor")
 public class ReadyView extends BaseView {
-    private float fly_x;                    // ͼƬ������
+    private float fly_x;
     private float fly_y;
     private float fly_height;
     private float text_x;
@@ -30,7 +29,7 @@ public class ReadyView extends BaseView {
     private float strhei;
     private boolean isBtChange;
     private boolean isBtChange2;
-    private String startGame = "开始游戏";
+    private String startGame = getContext().getString(R.string.start_game);
     private String exitGame = "退出游戏";
     private String version = "测试版本";
     private float version_width;//版本信息宽度
